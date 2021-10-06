@@ -12,7 +12,7 @@
         <!--Login FristVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginFristVC" customModule="Youtube_Clone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginFristVC" id="BYZ-38-t0r" customClass="LoginFristVC" customModule="Youtube_Clone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -60,12 +60,12 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M7Z-7N-cO0">
-                                <rect key="frame" x="25" y="589" width="78" height="34"/>
+                                <rect key="frame" x="25" y="604" width="78" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="계정만들기"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQT-fn-71f">
-                                <rect key="frame" x="269" y="586" width="120" height="40"/>
+                                <rect key="frame" x="269" y="601" width="120" height="40"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="0g6-fl-8gI"/>
@@ -96,7 +96,7 @@
                             <constraint firstItem="l6M-6h-7iH" firstAttribute="top" secondItem="ZIL-Xu-PkY" secondAttribute="bottom" constant="20" id="ZNk-EP-ec5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZIL-Xu-PkY" secondAttribute="trailing" constant="25" id="csP-IB-2Np"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RnR-s8-80l" secondAttribute="trailing" constant="25" id="ew5-Sw-hAW"/>
-                            <constraint firstItem="M7Z-7N-cO0" firstAttribute="top" secondItem="l6M-6h-7iH" secondAttribute="bottom" constant="55" id="fLy-1n-Bo0"/>
+                            <constraint firstItem="M7Z-7N-cO0" firstAttribute="top" secondItem="l6M-6h-7iH" secondAttribute="bottom" constant="70" id="fLy-1n-Bo0"/>
                             <constraint firstItem="ZIL-Xu-PkY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="jaR-u9-W1h"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZOz-Mt-yFI" secondAttribute="trailing" constant="25" id="oPi-c1-IHh"/>
                             <constraint firstItem="Hns-14-Jdd" firstAttribute="centerX" secondItem="Hvd-kd-Reb" secondAttribute="centerX" id="tKJ-ni-bGL"/>
@@ -112,23 +112,107 @@
             </objects>
             <point key="canvasLocation" x="139" y="131"/>
         </scene>
-        <!--View Controller-->
+        <!--Login SecondVC-->
         <scene sceneID="fm4-hb-TFw">
             <objects>
-                <viewController id="fha-VY-h29" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginSecondVC" id="fha-VY-h29" customClass="LoginSecondVC" customModule="Youtube_Clone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h9Z-9Z-wE5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Google" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6dV-2W-ARC">
+                                <rect key="frame" x="121" y="84" width="172" height="62.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="52"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원가입" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4Q-y1-jjo">
+                                <rect key="frame" x="162" y="171.5" width="90" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이름을 입력해주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X2N-yd-I5N">
+                                <rect key="frame" x="25" y="303" width="364" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="BmY-dK-uan"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일 또는 휴대전화" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zAU-qS-9nl">
+                                <rect key="frame" x="25" y="383" width="364" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Jnk-Eg-TCu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호 입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tGB-Td-Vjc">
+                                <rect key="frame" x="25" y="463" width="364" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="bV9-Tj-sA4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yGM-JI-wHj">
+                                <rect key="frame" x="25" y="598" width="364" height="40"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Mnn-ID-gLS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="다음">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o3c-uf-uJW">
+                                <rect key="frame" x="25" y="541" width="160" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="O0l-fn-6MP"/>
+                                    <constraint firstAttribute="width" constant="160" id="udD-hl-0Gi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="tintColor" white="0.21686728320000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="titleEdgeInsets" minX="18" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="-19" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="비밀번호 표시" image="square" catalog="system">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="VSi-8m-Xn6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="X2N-yd-I5N" firstAttribute="top" secondItem="w4Q-y1-jjo" secondAttribute="bottom" constant="100" id="049-mH-0Ca"/>
+                            <constraint firstItem="6dV-2W-ARC" firstAttribute="top" secondItem="VSi-8m-Xn6" secondAttribute="top" constant="40" id="0Ga-H8-FXQ"/>
+                            <constraint firstItem="X2N-yd-I5N" firstAttribute="leading" secondItem="VSi-8m-Xn6" secondAttribute="leading" constant="25" id="1m4-FO-gkz"/>
+                            <constraint firstItem="VSi-8m-Xn6" firstAttribute="trailing" secondItem="zAU-qS-9nl" secondAttribute="trailing" constant="25" id="4II-PM-sEH"/>
+                            <constraint firstItem="w4Q-y1-jjo" firstAttribute="top" secondItem="6dV-2W-ARC" secondAttribute="bottom" constant="25" id="AUG-QK-2Ty"/>
+                            <constraint firstItem="yGM-JI-wHj" firstAttribute="top" secondItem="tGB-Td-Vjc" secondAttribute="bottom" constant="75" id="Gfb-fI-bz3"/>
+                            <constraint firstItem="zAU-qS-9nl" firstAttribute="leading" secondItem="VSi-8m-Xn6" secondAttribute="leading" constant="25" id="Ih6-OB-JEq"/>
+                            <constraint firstItem="VSi-8m-Xn6" firstAttribute="trailing" secondItem="yGM-JI-wHj" secondAttribute="trailing" constant="25" id="Ot9-Pb-LdD"/>
+                            <constraint firstItem="yGM-JI-wHj" firstAttribute="leading" secondItem="VSi-8m-Xn6" secondAttribute="leading" constant="25" id="QVu-aF-DRp"/>
+                            <constraint firstItem="VSi-8m-Xn6" firstAttribute="trailing" secondItem="X2N-yd-I5N" secondAttribute="trailing" constant="25" id="R3s-0B-LjR"/>
+                            <constraint firstItem="VSi-8m-Xn6" firstAttribute="trailing" secondItem="tGB-Td-Vjc" secondAttribute="trailing" constant="25" id="Rha-zT-IUm"/>
+                            <constraint firstItem="6dV-2W-ARC" firstAttribute="centerX" secondItem="h9Z-9Z-wE5" secondAttribute="centerX" id="Tko-yK-11V"/>
+                            <constraint firstItem="zAU-qS-9nl" firstAttribute="top" secondItem="X2N-yd-I5N" secondAttribute="bottom" constant="20" id="d1f-Rj-DBk"/>
+                            <constraint firstItem="w4Q-y1-jjo" firstAttribute="centerX" secondItem="h9Z-9Z-wE5" secondAttribute="centerX" id="dXE-wg-3Yz"/>
+                            <constraint firstItem="o3c-uf-uJW" firstAttribute="top" secondItem="tGB-Td-Vjc" secondAttribute="bottom" constant="18" id="eCm-1E-WhZ"/>
+                            <constraint firstItem="o3c-uf-uJW" firstAttribute="leading" secondItem="VSi-8m-Xn6" secondAttribute="leading" constant="25" id="qbQ-Va-cMe"/>
+                            <constraint firstItem="tGB-Td-Vjc" firstAttribute="top" secondItem="zAU-qS-9nl" secondAttribute="bottom" constant="20" id="swr-Hb-puG"/>
+                            <constraint firstItem="tGB-Td-Vjc" firstAttribute="leading" secondItem="VSi-8m-Xn6" secondAttribute="leading" constant="25" id="v8g-uf-N5z"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RpN-WF-DwC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="931" y="135"/>
+            <point key="canvasLocation" x="930.43478260869574" y="134.59821428571428"/>
         </scene>
     </scenes>
     <resources>
+        <image name="square" catalog="system" width="128" height="114"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
