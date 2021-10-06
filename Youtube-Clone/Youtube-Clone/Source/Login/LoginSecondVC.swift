@@ -10,6 +10,7 @@ import UIKit
 class LoginSecondVC: UIViewController {
 
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var nameTextField: UITextField!
     
     // MARK: - VC LifeCycle
     override func viewDidLoad() {
@@ -24,5 +25,14 @@ class LoginSecondVC: UIViewController {
 
     func setButtonUI() {
         nextButton.layer.cornerRadius = 10
+    }
+    
+    // MARK: - IBAction
+    @IBAction func nextButtonClicked(_ sender: Any) {
+        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginThridVC") as? LoginThirdVC else {
+            return
+        }
+        nextVC.name = nameTextField.text
+        self.present(nextVC, animated: true, completion: nil)
     }
 }

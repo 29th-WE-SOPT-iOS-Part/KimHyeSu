@@ -170,6 +170,9 @@
                                 <state key="normal" title="다음">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="nextButtonClicked:" destination="fha-VY-h29" eventType="touchUpInside" id="7vl-r9-8RN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o3c-uf-uJW">
                                 <rect key="frame" x="25" y="541" width="160" height="30"/>
@@ -210,6 +213,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="nameTextField" destination="X2N-yd-I5N" id="Q6Z-TR-qxs"/>
                         <outlet property="nextButton" destination="yGM-JI-wHj" id="RGi-Ar-TTt"/>
                     </connections>
                 </viewController>
