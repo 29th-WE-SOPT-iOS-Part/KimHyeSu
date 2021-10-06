@@ -75,6 +75,9 @@
                                 <state key="normal" title="다음">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="nextButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CO7-Xg-TgK"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -105,6 +108,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="nameTextField" destination="RnR-s8-80l" id="7nm-jm-4FP"/>
                         <outlet property="nextButton" destination="RQT-fn-71f" id="H2R-AS-Opr"/>
                     </connections>
                 </viewController>
@@ -261,6 +265,7 @@
                     </view>
                     <connections>
                         <outlet property="doneButton" destination="so3-1r-Gvm" id="Hi6-IG-dd1"/>
+                        <outlet property="nameTextLabel" destination="kIv-8l-n49" id="p5P-yB-jSD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lDH-9e-7H4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
