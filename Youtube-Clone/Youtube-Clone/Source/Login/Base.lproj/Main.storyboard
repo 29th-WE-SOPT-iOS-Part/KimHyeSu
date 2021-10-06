@@ -69,7 +69,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQT-fn-71f">
                                 <rect key="frame" x="269" y="645" width="120" height="40"/>
-                                <color key="backgroundColor" name="AccentColor"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="0g6-fl-8gI"/>
                                     <constraint firstAttribute="width" constant="120" id="6MG-IC-QbJ"/>
@@ -112,8 +112,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="iQC-WL-oQX"/>
                     <connections>
+                        <outlet property="emailTextField" destination="ZIL-Xu-PkY" id="q4O-e7-Lv1"/>
                         <outlet property="nameTextField" destination="RnR-s8-80l" id="7nm-jm-4FP"/>
                         <outlet property="nextButton" destination="RQT-fn-71f" id="H2R-AS-Opr"/>
+                        <outlet property="pwTextField" destination="l6M-6h-7iH" id="B0A-UK-hSS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -166,7 +168,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yGM-JI-wHj">
                                 <rect key="frame" x="25" y="598" width="364" height="40"/>
-                                <color key="backgroundColor" name="AccentColor"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Mnn-ID-gLS"/>
                                 </constraints>
@@ -217,8 +219,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="emailTextField" destination="zAU-qS-9nl" id="rS4-wG-pOA"/>
                         <outlet property="nameTextField" destination="X2N-yd-I5N" id="Q6Z-TR-qxs"/>
                         <outlet property="nextButton" destination="yGM-JI-wHj" id="RGi-Ar-TTt"/>
+                        <outlet property="pwTextField" destination="tGB-Td-Vjc" id="b0C-xx-jZo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RpN-WF-DwC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
