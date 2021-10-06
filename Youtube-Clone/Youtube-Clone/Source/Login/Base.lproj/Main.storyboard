@@ -57,7 +57,7 @@
                                     <constraint firstAttribute="height" constant="60" id="LOc-t7-3Bi"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M7Z-7N-cO0">
                                 <rect key="frame" x="25" y="648" width="78" height="34"/>
@@ -164,7 +164,7 @@
                                     <constraint firstAttribute="height" constant="60" id="bV9-Tj-sA4"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yGM-JI-wHj">
                                 <rect key="frame" x="25" y="598" width="364" height="40"/>
@@ -193,6 +193,9 @@
                                 <state key="normal" title="비밀번호 표시" image="square" catalog="system">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="pwButtonClicked:" destination="fha-VY-h29" eventType="touchUpInside" id="EdX-5A-esD"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="VSi-8m-Xn6"/>
@@ -222,6 +225,7 @@
                         <outlet property="emailTextField" destination="zAU-qS-9nl" id="rS4-wG-pOA"/>
                         <outlet property="nameTextField" destination="X2N-yd-I5N" id="Q6Z-TR-qxs"/>
                         <outlet property="nextButton" destination="yGM-JI-wHj" id="RGi-Ar-TTt"/>
+                        <outlet property="pwButton" destination="o3c-uf-uJW" id="6hX-0b-hTT"/>
                         <outlet property="pwTextField" destination="tGB-Td-Vjc" id="b0C-xx-jZo"/>
                     </connections>
                 </viewController>

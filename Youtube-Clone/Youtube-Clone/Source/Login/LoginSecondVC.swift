@@ -10,6 +10,7 @@ import UIKit
 class LoginSecondVC: UIViewController {
 
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var pwButton: UIButton!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var pwTextField: UITextField!
@@ -55,5 +56,16 @@ class LoginSecondVC: UIViewController {
         nextVC.name = nameTextField.text
         nextVC.modalPresentationStyle = .fullScreen
         self.present(nextVC, animated: true, completion: nil)
+    }
+    
+    @IBAction func pwButtonClicked(_ sender: Any) {
+        pwTextField.isSecureTextEntry = !pwTextField.isSecureTextEntry
+        if !pwTextField.isSecureTextEntry {
+            pwButton.setImage(UIImage(systemName: "checkmark.square.fill"), for: .normal)
+            pwButton.tintColor = .systemBlue
+        } else {
+            pwButton.setImage(UIImage(systemName: "square"), for: .normal)
+            pwButton.tintColor = .black
+        }
     }
 }
