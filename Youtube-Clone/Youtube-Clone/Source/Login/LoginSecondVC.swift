@@ -29,10 +29,11 @@ class LoginSecondVC: UIViewController {
     
     // MARK: - IBAction
     @IBAction func nextButtonClicked(_ sender: Any) {
-        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginThridVC") as? LoginThirdVC else {
+        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginThirdVC") as? LoginThirdVC else {
             return
         }
         nextVC.name = nameTextField.text
+        nextVC.modalPresentationStyle = .fullScreen
         self.present(nextVC, animated: true, completion: nil)
     }
 }
