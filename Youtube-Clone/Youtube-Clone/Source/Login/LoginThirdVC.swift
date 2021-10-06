@@ -1,5 +1,5 @@
 //
-//  LoginSecondVC.swift
+//  LoginThirdVC.swift
 //  Youtube-Clone
 //
 //  Created by 김혜수 on 2021/10/06.
@@ -7,10 +7,10 @@
 
 import UIKit
 
-class LoginSecondVC: UIViewController {
+class LoginThirdVC: UIViewController {
 
-    @IBOutlet weak var nextButton: UIButton!
-    
+    @IBOutlet weak var doneButton: UIButton!
+
     // MARK: - VC LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +23,7 @@ class LoginSecondVC: UIViewController {
     }
 
     func setButtonUI() {
-        nextButton.layer.cornerRadius = 10
+        doneButton.layer.cornerRadius = 10
     }
+
 }

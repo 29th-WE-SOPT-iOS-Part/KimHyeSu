@@ -205,10 +205,67 @@
                             <constraint firstItem="tGB-Td-Vjc" firstAttribute="leading" secondItem="VSi-8m-Xn6" secondAttribute="leading" constant="25" id="v8g-uf-N5z"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nextButton" destination="yGM-JI-wHj" id="RGi-Ar-TTt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RpN-WF-DwC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="930.43478260869574" y="134.59821428571428"/>
+        </scene>
+        <!--Login ThirdVC-->
+        <scene sceneID="2sb-vd-Ulh">
+            <objects>
+                <viewController storyboardIdentifier="LoginThirdVC" id="srm-5H-jqG" customClass="LoginThirdVC" customModule="Youtube_Clone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yLy-le-faY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Google" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ay-8m-3z5">
+                                <rect key="frame" x="121" y="269" width="172" height="62.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="52"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름님" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIv-8l-n49">
+                                <rect key="frame" x="25" y="361.5" width="364" height="31.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="so3-1r-Gvm">
+                                <rect key="frame" x="25" y="571.5" width="364" height="40"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="rEL-Wp-VIH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="완료">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hgC-kx-OaF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6ay-8m-3z5" firstAttribute="top" secondItem="hgC-kx-OaF" secondAttribute="top" constant="225" id="9TR-ay-Pe0"/>
+                            <constraint firstItem="6ay-8m-3z5" firstAttribute="centerX" secondItem="yLy-le-faY" secondAttribute="centerX" id="I9X-H2-5dl"/>
+                            <constraint firstItem="kIv-8l-n49" firstAttribute="centerX" secondItem="yLy-le-faY" secondAttribute="centerX" id="J6f-eJ-qxA"/>
+                            <constraint firstItem="hgC-kx-OaF" firstAttribute="trailing" secondItem="so3-1r-Gvm" secondAttribute="trailing" constant="25" id="OBi-90-aTh"/>
+                            <constraint firstItem="so3-1r-Gvm" firstAttribute="top" secondItem="6ay-8m-3z5" secondAttribute="bottom" constant="240" id="dYG-R2-Hyd"/>
+                            <constraint firstItem="kIv-8l-n49" firstAttribute="top" secondItem="6ay-8m-3z5" secondAttribute="bottom" constant="30" id="h4Y-7v-OGl"/>
+                            <constraint firstItem="kIv-8l-n49" firstAttribute="leading" secondItem="hgC-kx-OaF" secondAttribute="leading" constant="25" id="mpn-Hs-RKX"/>
+                            <constraint firstItem="so3-1r-Gvm" firstAttribute="leading" secondItem="hgC-kx-OaF" secondAttribute="leading" constant="25" id="rnm-DG-b5A"/>
+                            <constraint firstItem="hgC-kx-OaF" firstAttribute="trailing" secondItem="kIv-8l-n49" secondAttribute="trailing" constant="25" id="utd-TQ-cZL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="doneButton" destination="so3-1r-Gvm" id="Hi6-IG-dd1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lDH-9e-7H4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1657" y="135"/>
         </scene>
     </scenes>
     <resources>
