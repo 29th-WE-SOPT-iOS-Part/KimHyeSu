@@ -22,6 +22,8 @@
 <br>
 
 ## Instrinsic contents size
+[🔥 28th 정리 link](https://github.com/28th-BE-SOPT-iOS-Part/KimHyeSoo/tree/main/Seminar/SOPT-seminar-2#intrinsic-size)
+
 ![](https://images.velog.io/images/hyesuuou/post/4a894719-3268-4942-aaf4-4c5d03e38987/image.png)
 - 컨텐츠의 본질적인 크기 
 - UILabel, UIButton 등은 text와 font size를 설정해 줄 수 있으므로, 컨텐츠의 본질적인 크기가 존재함
