@@ -12,9 +12,9 @@
 		15567B31270C82B6006B428E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15567B2F270C82B6006B428E /* Main.storyboard */; };
 		15567B33270C82B8006B428E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15567B32270C82B8006B428E /* Assets.xcassets */; };
 		15567B36270C82B9006B428E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15567B34270C82B9006B428E /* LaunchScreen.storyboard */; };
-		15567B41270CDF26006B428E /* LoginFristVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15567B40270CDF26006B428E /* LoginFristVC.swift */; };
-		15567B43270D7017006B428E /* LoginSecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15567B42270D7017006B428E /* LoginSecondVC.swift */; };
-		15567B45270D71DD006B428E /* LoginThirdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15567B44270D71DD006B428E /* LoginThirdVC.swift */; };
+		15567B41270CDF26006B428E /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15567B40270CDF26006B428E /* LoginVC.swift */; };
+		15567B43270D7017006B428E /* JoinVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15567B42270D7017006B428E /* JoinVC.swift */; };
+		15567B45270D71DD006B428E /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15567B44270D71DD006B428E /* WelcomeVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,9 +25,9 @@
 		15567B32270C82B8006B428E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		15567B35270C82B9006B428E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		15567B37270C82B9006B428E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		15567B40270CDF26006B428E /* LoginFristVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFristVC.swift; sourceTree = "<group>"; };
-		15567B42270D7017006B428E /* LoginSecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSecondVC.swift; sourceTree = "<group>"; };
-		15567B44270D71DD006B428E /* LoginThirdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginThirdVC.swift; sourceTree = "<group>"; };
+		15567B40270CDF26006B428E /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		15567B42270D7017006B428E /* JoinVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinVC.swift; sourceTree = "<group>"; };
+		15567B44270D71DD006B428E /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,9 +90,9 @@
 			isa = PBXGroup;
 			children = (
 				15567B2F270C82B6006B428E /* Main.storyboard */,
-				15567B44270D71DD006B428E /* LoginThirdVC.swift */,
-				15567B40270CDF26006B428E /* LoginFristVC.swift */,
-				15567B42270D7017006B428E /* LoginSecondVC.swift */,
+				15567B44270D71DD006B428E /* WelcomeVC.swift */,
+				15567B40270CDF26006B428E /* LoginVC.swift */,
+				15567B42270D7017006B428E /* JoinVC.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -167,11 +167,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15567B43270D7017006B428E /* LoginSecondVC.swift in Sources */,
+				15567B43270D7017006B428E /* JoinVC.swift in Sources */,
 				15567B2A270C82B6006B428E /* AppDelegate.swift in Sources */,
-				15567B41270CDF26006B428E /* LoginFristVC.swift in Sources */,
+				15567B41270CDF26006B428E /* LoginVC.swift in Sources */,
 				15567B2C270C82B6006B428E /* SceneDelegate.swift in Sources */,
-				15567B45270D71DD006B428E /* LoginThirdVC.swift in Sources */,
+				15567B45270D71DD006B428E /* WelcomeVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,10 +7,12 @@
 
 import UIKit
 
-class LoginThirdVC: UIViewController {
+class WelcomeVC: UIViewController {
 
+    // MARK: - Property
     var name: String?
     
+    // MARK: - IBOutlet
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var nameTextLabel: UILabel!
     

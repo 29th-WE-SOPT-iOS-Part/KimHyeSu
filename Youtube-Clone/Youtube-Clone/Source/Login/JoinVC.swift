@@ -7,13 +7,14 @@
 
 import UIKit
 
-class LoginSecondVC: UIViewController {
+class JoinVC: UIViewController {
 
-    @IBOutlet weak var nextButton: UIButton!
-    @IBOutlet weak var pwButton: UIButton!
+    // MARK: - IBOutlet
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var pwTextField: UITextField!
+    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var pwButton: UIButton!
     
     // MARK: - VC LifeCycle
     override func viewDidLoad() {
@@ -32,25 +33,21 @@ class LoginSecondVC: UIViewController {
     }
     
     func textfieldChange() {
-        nameTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
-        emailTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
-        pwTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+        [nameTextField, emailTextField, pwTextField].forEach {
+            $0?.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+        }
     }
     
     // MARK: - Objc func
     @objc func textFieldDidChange() {
-        if nameTextField.text != "",
-           emailTextField.text != "",
-           pwTextField.text != "" {
-            nextButton.backgroundColor = .systemBlue
-        } else {
-            nextButton.backgroundColor = .lightGray
-        }
+        let isAllTextFieldHasText = nameTextField.hasText && emailTextField.hasText && pwTextField.hasText
+        nextButton.isEnabled = isAllTextFieldHasText
+        nextButton.backgroundColor = isAllTextFieldHasText ? .systemBlue : .lightGray
     }
     
     // MARK: - IBAction
     @IBAction func nextButtonClicked(_ sender: Any) {
-        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginThirdVC") as? LoginThirdVC else {
+        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginThirdVC") as? WelcomeVC else {
             return
         }
         nextVC.name = nameTextField.text
@@ -59,7 +56,8 @@ class LoginSecondVC: UIViewController {
     }
     
     @IBAction func pwButtonClicked(_ sender: Any) {
-        pwTextField.isSecureTextEntry = !pwTextField.isSecureTextEntry
+        pwTextField.isSecureTextEntry.toggle()
+        
         if !pwTextField.isSecureTextEntry {
             pwButton.setImage(UIImage(systemName: "checkmark.square.fill"), for: .normal)
             pwButton.tintColor = .systemBlue
