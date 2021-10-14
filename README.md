@@ -4,7 +4,7 @@
 
 |Week|내용|세미나정리|과제|
 |:---:|:---------------|:-------------:|:---------:|
-|`1주차`|iOS 컴포넌트 이해, Xcode 기본 사용법, View 화면전환|[📚 link](https://github.com/29th-WE-SOPT-iOS-Part/KimHyeSu/tree/main/Seminar/29th-week01-seminar#week01-seminar)||
+|`1주차`|iOS 컴포넌트 이해, Xcode 기본 사용법, View 화면전환|[📚 link](https://github.com/29th-WE-SOPT-iOS-Part/KimHyeSu/tree/main/Seminar/29th-week01-seminar#week01-seminar)|[✅ link](https://github.com/29th-WE-SOPT-iOS-Part/KimHyeSu/tree/main/Youtube-Clone#week01)|
 |`2주차`|Autolayout, StackView, TabBarController|[📚 link](https://github.com/29th-WE-SOPT-iOS-Part/KimHyeSu/tree/main/Seminar/29th-week02-seminar#week02-seminar)||
 |`3주차`|ScrollView, TableView, CollectionView|||
 |`4주차`|Cocoapods & Networking, REST API|||
