@@ -38,7 +38,7 @@ class SignUpVC: SignBaseVC {
     // MARK: - Objc function
     @objc func signUpButtonClicked() {
         let welcomeVC = WelcomeVC()
-        welcomeVC.name = idTextField.text!
+        welcomeVC.name = idTextField.text
         welcomeVC.modalPresentationStyle = .fullScreen
         self.present(welcomeVC, animated: true, completion: nil)
     }
