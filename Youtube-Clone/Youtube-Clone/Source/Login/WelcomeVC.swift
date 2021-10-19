@@ -36,5 +36,8 @@ class WelcomeVC: UIViewController {
     func setData(){
         nameTextLabel.text = "\(name!)님\n환영합니다!"
     }
-
+    
+    // MARK: - IBAction
+    @IBAction func loginOtherButtonClicked(_ sender: Any) {
+    }
 }
