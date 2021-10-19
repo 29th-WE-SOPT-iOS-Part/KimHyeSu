@@ -270,7 +270,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="completeButtonClicked:" destination="srm-5H-jqG" eventType="touchUpInside" id="hPs-FN-rxs"/>
+                                    <action selector="doneButtonClicked:" destination="srm-5H-jqG" eventType="touchUpInside" id="hPs-FN-rxs"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ImgGoogle" translatesAutoresizingMaskIntoConstraints="NO" id="4ur-OH-4qZ">
