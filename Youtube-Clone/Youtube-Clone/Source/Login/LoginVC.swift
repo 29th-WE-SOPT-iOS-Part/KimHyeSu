@@ -23,6 +23,11 @@ class LoginVC: UIViewController {
         textFieldChange()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setTextFieldEmpty()
+    }
+    
     // MARK: - UI setting
     func setUI() {
         setLabelUI()
@@ -46,6 +51,12 @@ class LoginVC: UIViewController {
     func textFieldChange() {
         [nameTextField, emailTextField, pwTextField].forEach {
             $0?.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+        }
+    }
+    
+    func setTextFieldEmpty() {
+        [nameTextField, emailTextField, pwTextField].forEach {
+            $0.text = ""
         }
     }
     

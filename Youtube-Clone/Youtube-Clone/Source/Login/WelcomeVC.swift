@@ -38,6 +38,14 @@ class WelcomeVC: UIViewController {
     }
     
     // MARK: - IBAction
+    @IBAction func completeButtonClicked(_ sender: Any) {
+        // 탭바로 연결하기
+    }
+    
     @IBAction func loginOtherButtonClicked(_ sender: Any) {
+        guard let preVC = self.presentingViewController as? UINavigationController else { return }
+        self.dismiss(animated: true) {
+            preVC.popToRootViewController(animated: true)
+        }
     }
 }
