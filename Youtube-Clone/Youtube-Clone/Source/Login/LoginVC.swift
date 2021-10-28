@@ -10,6 +10,7 @@ import UIKit
 class LoginVC: UIViewController {
 
     // MARK: - IBOutlet
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var pwTextField: UITextField!
@@ -22,10 +23,20 @@ class LoginVC: UIViewController {
         textFieldChange()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setTextFieldEmpty()
+    }
+    
     // MARK: - UI setting
     func setUI() {
+        setLabelUI()
         setButtonUI()
         setNavigationBarUI()
+    }
+    
+    func setLabelUI() {
+        descriptionLabel.text = "Youtube로 이동하여 계속하세요.\n앱 및 Safari에서도 Google 서비스에 로그인됩니다."
     }
 
     func setButtonUI() {
@@ -36,9 +47,16 @@ class LoginVC: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
     }
     
+    // MARK: - Custom Function
     func textFieldChange() {
         [nameTextField, emailTextField, pwTextField].forEach {
             $0?.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+        }
+    }
+    
+    func setTextFieldEmpty() {
+        [nameTextField, emailTextField, pwTextField].forEach {
+            $0.text = ""
         }
     }
     
