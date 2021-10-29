@@ -17,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="306"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AO1-nj-Ex0">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AO1-nj-Ex0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="212"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="212" id="lXd-fD-gUe"/>
@@ -37,18 +37,18 @@
                             <constraint firstAttribute="width" constant="26" id="M0V-v6-et5"/>
                         </constraints>
                         <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="ellipsis" catalog="system"/>
+                        <buttonConfiguration key="configuration" style="plain" image="moreMenuIcon" title=" "/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QO0-e3-MjB">
-                        <rect key="frame" x="60" y="224" width="270" height="20.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="60" y="224" width="270" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACn-X3-Sas">
-                        <rect key="frame" x="60" y="248.5" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <rect key="frame" x="60" y="246" width="33" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -78,6 +78,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="ellipsis" catalog="system" width="128" height="37"/>
+        <image name="moreMenuIcon" width="26" height="26"/>
     </resources>
 </document>

@@ -113,11 +113,12 @@ extension HomeTabVC: UICollectionViewDelegateFlowLayout {
 extension HomeTabVC {
     func setDummyData() {
         videoList.append(contentsOf:
-                            [VideoData(thumnail: "wesoptiOSPart", title: "아요파트", channel: Channel(image: "wesoptProfile", name: "WE SOPT"), watch: 130, upload: "3주 전"),
-                             VideoData(thumnail: "wesoptiOSPart", title: "아요파트", channel: Channel(image: "wesoptProfile", name: "WE SOPT"), watch: 130, upload: "3주 전"), VideoData(thumnail: "wesoptiOSPart", title: "아요파트", channel: Channel(image: "wesoptProfile", name: "WE SOPT"), watch: 130, upload: "3주 전"),
+                            [VideoData(thumnail: "wesoptiOSPart", title: "1차 iOS 세미나 : iOS 컴포넌트 이해, Xcode 기본 사용법, View 화면전환", channel: Channel(image: "wesoptProfile", name: "WE SOPT"), watch: 130, upload: "3주 전"),
+                             VideoData(thumnail: "wesoptiOSPart", title: "2차 iOS 세미나 : AutoLayout, StackView, TabBarController", channel: Channel(image: "wesoptProfile", name: "WE SOPT"), watch: 130, upload: "3주 전"),
                              VideoData(thumnail: "wesoptiOSPart", title: "아요파트", channel: Channel(image: "wesoptProfile", name: "WE SOPT"), watch: 130, upload: "3주 전"),
-                             VideoData(thumnail: "wesoptiOSPart", title: "아요파트", channel: Channel(image: "wesoptProfile", name: "WE SOPT"), watch: 130, upload: "3주 전"),
-                             VideoData(thumnail: "wesoptiOSPart", title: "아요파트", channel: Channel(image: "wesoptProfile", name: "WE SOPT"), watch: 130, upload: "3주 전"),
+                             VideoData(thumnail: "wesoptiOSPart", title: "3차 iOS 세미나 : ScrollView, Delegate Pattern, TableView, CollectionView", channel: Channel(image: "wesoptProfile", name: "WE SOPT"), watch: 130, upload: "3주 전"),
+                             VideoData(thumnail: "wesoptiOSPart", title: "4차 iOS 세미나 : Cocoapods & Networking, REST API", channel: Channel(image: "wesoptProfile", name: "WE SOPT"), watch: 130, upload: "3주 전"),
+                             VideoData(thumnail: "wesoptiOSPart", title: "7차 iOS 세미나 : Animation과 제스쳐, 데이터 전달 심화 ", channel: Channel(image: "wesoptProfile", name: "WE SOPT"), watch: 130, upload: "3주 전"),
                              VideoData(thumnail: "wesoptiOSPart", title: "아요파트", channel: Channel(image: "wesoptProfile", name: "WE SOPT"), watch: 130, upload: "3주 전")
                             ])
         
