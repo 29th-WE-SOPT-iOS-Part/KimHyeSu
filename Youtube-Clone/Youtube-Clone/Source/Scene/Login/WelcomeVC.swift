@@ -40,8 +40,7 @@ class WelcomeVC: UIViewController {
     // MARK: - IBAction
     @IBAction func doneButtonClicked(_ sender: Any) {
         guard let mainTabVC = UIStoryboard(name: "MainTab", bundle: nil).instantiateViewController(withIdentifier: "MainTabVC") as? MainTabVC else { return }
-        mainTabVC.modalPresentationStyle = .fullScreen
-        self.present(mainTabVC, animated: true, completion: nil)
+        self.changeRootViewController(mainTabVC)
     }
     
     @IBAction func loginOtherButtonClicked(_ sender: Any) {
