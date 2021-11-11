@@ -14,5 +14,5 @@ struct APIConstants {
     
     // MARK: - /user
     static let loginURL = "/user/login"
-    
+    static let joinURL = "/user/signup"
 }

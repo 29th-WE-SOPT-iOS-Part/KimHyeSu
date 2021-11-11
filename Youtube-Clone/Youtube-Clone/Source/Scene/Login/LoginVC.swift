@@ -79,7 +79,7 @@ class LoginVC: UIViewController {
             
             switch res {
             case .success(let data):
-                guard let data = data as? LoginResponseModel else { return }
+                guard let data = data as? UserResponseModel else { return }
                 self.makeAlert(title: "로그인",
                                message: data.message,
                                okAction: { _ in

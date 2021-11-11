@@ -45,8 +45,9 @@ class HomeTabVC: UIViewController {
     // MARK: - IBAction
     @IBAction func loginButtonClicked(_ sender: Any) {
         guard let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginFristVC") as? LoginVC else { return }
-        loginVC.modalPresentationStyle = .fullScreen
-        self.present(loginVC, animated: true, completion: nil)
+        let loginNVC = UINavigationController(rootViewController: loginVC)
+        loginNVC.modalPresentationStyle = .fullScreen
+        self.present(loginNVC, animated: true, completion: nil)
     }
     
 }

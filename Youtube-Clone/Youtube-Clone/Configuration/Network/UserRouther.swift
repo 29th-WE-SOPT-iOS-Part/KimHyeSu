@@ -12,6 +12,7 @@ import Alamofire
 enum UserRouter: URLRequestConvertible {
     
     case userLogin(login: LoginRequestModel)
+    case userJoin(join: JoinRequestModel)
     
     var baseURL: URL {
         return URL(string: APIConstants.baseURL)!
@@ -19,26 +20,30 @@ enum UserRouter: URLRequestConvertible {
     
     var method: HTTPMethod {
         switch self {
-        case .userLogin: return .post
+        case .userLogin, .userJoin: return .post
         }
     }
     
     var path: String {
         switch self {
         case .userLogin: return APIConstants.loginURL
+        case .userJoin: return APIConstants.joinURL
         }
     }
     
     var headers: [String: String] {
         switch self {
-        case .userLogin: return ["Content-Type": "application/json"]
+        case .userLogin, .userJoin: return ["Content-Type": "application/json"]
         }
     }
     
     var parameters: [String: String] {
         switch self {
-        case .userLogin(let login): return ["email": "\(login.email)",
-                                            "password" : "\(login.password)"]
+        case .userLogin(let login): return ["email": login.email,
+                                            "password": login.password]
+        case .userJoin(let join): return ["email": join.email,
+                                          "name": join.name,
+                                          "password": join.password]
         }
     }
     
@@ -50,7 +55,7 @@ enum UserRouter: URLRequestConvertible {
         request.headers = HTTPHeaders(headers)
         
         switch self {
-        case .userLogin: request = try JSONParameterEncoder().encode(parameters, into: request)
+        case .userLogin, .userJoin: request = try JSONParameterEncoder().encode(parameters, into: request)
         }
         
         return request

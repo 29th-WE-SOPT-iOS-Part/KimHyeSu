@@ -26,7 +26,31 @@ struct UserService {
                     print(res)
                     switch res.response?.statusCode {
                     case 200, 400:
-                        guard let jsonData = try? JSONDecoder().decode(LoginResponseModel.self, from: data) else { return }
+                        guard let jsonData = try? JSONDecoder().decode(UserResponseModel.self, from: data) else { return }
+                        return completion(.success(jsonData))
+                        
+                    default: completion(.networkFail)
+                    }
+                    
+                case .failure(let err):
+                    print(err)
+                }
+            }
+    }
+    
+    // MARK: - Join
+    func userJoin(email: String, name: String, password: String,
+                  completion: @escaping (NetworkResult<Any>) -> Void) {
+        
+        AF.request(UserRouter.userJoin(join: JoinRequestModel(email: email, name: name, password: password)))
+            .validate(statusCode: 200...500)
+            .responseData { res in
+                switch res.result {
+                case .success(let data):
+                    print(res)
+                    switch res.response?.statusCode {
+                    case 200, 400:
+                        guard let jsonData = try? JSONDecoder().decode(UserResponseModel.self, from: data) else { return }
                         return completion(.success(jsonData))
                         
                     default: completion(.networkFail)

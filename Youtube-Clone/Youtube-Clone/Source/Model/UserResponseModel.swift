@@ -8,15 +8,15 @@
 import Foundation
 
 // MARK: - LoginResponseModel
-struct LoginResponseModel: Codable {
+struct UserResponseModel: Codable {
     let status: Int
     let success: Bool
     let message: String
-    let data: LoginResponseData?
+    let data: UserResponseData?
 }
 
 // MARK: - DataClass
-struct LoginResponseData: Codable {
+struct UserResponseData: Codable {
     let id: Int
     let name, email: String
 }
