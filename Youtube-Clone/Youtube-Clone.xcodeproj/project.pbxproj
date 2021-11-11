@@ -34,6 +34,11 @@
 		159B8255271EED3500CE1B2C /* MainTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159B8254271EED3500CE1B2C /* MainTabVC.swift */; };
 		15B7CC4E273C4DAD006D34E9 /* UIViewController +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B7CC4D273C4DAD006D34E9 /* UIViewController +.swift */; };
 		15B7CC51273D0B48006D34E9 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B7CC50273D0B48006D34E9 /* APIConstants.swift */; };
+		15B7CC53273D10A0006D34E9 /* LoginResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B7CC52273D10A0006D34E9 /* LoginResponseModel.swift */; };
+		15B7CC55273D10FA006D34E9 /* LoginRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B7CC54273D10FA006D34E9 /* LoginRequestModel.swift */; };
+		15B7CC58273D1265006D34E9 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B7CC57273D1265006D34E9 /* UserService.swift */; };
+		15B7CC5A273D15AC006D34E9 /* UserRouther.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B7CC59273D15AC006D34E9 /* UserRouther.swift */; };
+		15B7CC5C273D1DB1006D34E9 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B7CC5B273D1DB1006D34E9 /* NetworkResult.swift */; };
 		2E3A6F10F8558DF6C2B17328 /* Pods_Youtube_Clone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03618B9500CE7C4F54BC759C /* Pods_Youtube_Clone.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +73,11 @@
 		159B8254271EED3500CE1B2C /* MainTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabVC.swift; sourceTree = "<group>"; };
 		15B7CC4D273C4DAD006D34E9 /* UIViewController +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController +.swift"; sourceTree = "<group>"; };
 		15B7CC50273D0B48006D34E9 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		15B7CC52273D10A0006D34E9 /* LoginResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseModel.swift; sourceTree = "<group>"; };
+		15B7CC54273D10FA006D34E9 /* LoginRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestModel.swift; sourceTree = "<group>"; };
+		15B7CC57273D1265006D34E9 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		15B7CC59273D15AC006D34E9 /* UserRouther.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRouther.swift; sourceTree = "<group>"; };
+		15B7CC5B273D1DB1006D34E9 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		3AF79A117909EDC4A01CDE29 /* Pods-Youtube-Clone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Youtube-Clone.debug.xcconfig"; path = "Target Support Files/Pods-Youtube-Clone/Pods-Youtube-Clone.debug.xcconfig"; sourceTree = "<group>"; };
 		C2F4FA688B1DE7C99C941E08 /* Pods-Youtube-Clone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Youtube-Clone.release.xcconfig"; path = "Target Support Files/Pods-Youtube-Clone/Pods-Youtube-Clone.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,6 +155,7 @@
 		15567B3E270CDEFE006B428E /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				15B7CC56273D125A006D34E9 /* Service */,
 				156362DC272B195B00AFED71 /* Model */,
 				156362DB272B194A00AFED71 /* Scene */,
 			);
@@ -232,6 +243,8 @@
 			children = (
 				156362DD272B198900AFED71 /* VideoDataModel.swift */,
 				156362DF272B1DD700AFED71 /* Channel.swift */,
+				15B7CC52273D10A0006D34E9 /* LoginResponseModel.swift */,
+				15B7CC54273D10FA006D34E9 /* LoginRequestModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -262,8 +275,18 @@
 			isa = PBXGroup;
 			children = (
 				15B7CC50273D0B48006D34E9 /* APIConstants.swift */,
+				15B7CC59273D15AC006D34E9 /* UserRouther.swift */,
+				15B7CC5B273D1DB1006D34E9 /* NetworkResult.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		15B7CC56273D125A006D34E9 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				15B7CC57273D1265006D34E9 /* UserService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,14 +416,19 @@
 				159B8249271EE9BF00CE1B2C /* ShortsTabVC.swift in Sources */,
 				159B824F271EEB2D00CE1B2C /* AddTabVC.swift in Sources */,
 				159B8247271EE9B500CE1B2C /* HomeTabVC.swift in Sources */,
+				15B7CC55273D10FA006D34E9 /* LoginRequestModel.swift in Sources */,
+				15B7CC53273D10A0006D34E9 /* LoginResponseModel.swift in Sources */,
 				15567B2A270C82B6006B428E /* AppDelegate.swift in Sources */,
 				156362D4272B148100AFED71 /* HomeTVC.swift in Sources */,
 				156362E0272B1DD700AFED71 /* Channel.swift in Sources */,
 				156362DE272B198900AFED71 /* VideoDataModel.swift in Sources */,
 				15567B41270CDF26006B428E /* LoginVC.swift in Sources */,
+				15B7CC5C273D1DB1006D34E9 /* NetworkResult.swift in Sources */,
+				15B7CC5A273D15AC006D34E9 /* UserRouther.swift in Sources */,
 				15567B2C270C82B6006B428E /* SceneDelegate.swift in Sources */,
 				15B7CC4E273C4DAD006D34E9 /* UIViewController +.swift in Sources */,
 				156362E2272B27AE00AFED71 /* HomeStoryCVC.swift in Sources */,
+				15B7CC58273D1265006D34E9 /* UserService.swift in Sources */,
 				15567B45270D71DD006B428E /* WelcomeVC.swift in Sources */,
 				159B8253271EEB4200CE1B2C /* StoreTabVC.swift in Sources */,
 				159B8251271EEB3500CE1B2C /* SubscribeTabVC.swift in Sources */,
