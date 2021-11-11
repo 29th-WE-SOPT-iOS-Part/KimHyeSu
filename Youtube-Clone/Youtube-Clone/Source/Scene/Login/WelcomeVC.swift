@@ -34,6 +34,7 @@ class WelcomeVC: UIViewController {
     
     // MARK: - Data setting
     func setData(){
+        name = UserDefaults.standard.value(forKey: "name") as? String
         nameTextLabel.text = "\(name!)님\n환영합니다!"
     }
     

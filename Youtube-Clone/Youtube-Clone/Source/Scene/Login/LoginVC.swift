@@ -85,7 +85,7 @@ class LoginVC: UIViewController {
                                okAction: { _ in
                     if data.status == 200 {
                         guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginThirdVC") as? WelcomeVC else { return }
-                        nextVC.name = data.data?.name
+                        UserDefaults.standard.set(data.data?.name, forKey: "name")
                         nextVC.modalPresentationStyle = .fullScreen
                         self.present(nextVC, animated: true, completion: nil)
                     }

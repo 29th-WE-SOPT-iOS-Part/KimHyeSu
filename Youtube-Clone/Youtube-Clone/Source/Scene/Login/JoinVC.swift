@@ -72,7 +72,7 @@ class JoinVC: UIViewController {
                         guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginThirdVC") as? WelcomeVC else {
                             return
                         }
-                        nextVC.name = self.nameTextField.text
+                        UserDefaults.standard.set(data.data?.name, forKey: "name")
                         nextVC.modalPresentationStyle = .fullScreen
                         self.present(nextVC, animated: true, completion: nil)
                     }
