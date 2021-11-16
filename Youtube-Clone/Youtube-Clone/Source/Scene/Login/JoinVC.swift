@@ -68,17 +68,21 @@ class JoinVC: UIViewController {
                 self.makeAlert(title: "회원가입",
                                message: data.message,
                                okAction: { _ in
-                    if data.status == 200 {
-                        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginThirdVC") as? WelcomeVC else {
-                            return
-                        }
-                        UserDefaults.standard.set(data.data?.name, forKey: "name")
-                        nextVC.modalPresentationStyle = .fullScreen
-                        self.present(nextVC, animated: true, completion: nil)
+                    
+                    guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginThirdVC") as? WelcomeVC else {
+                        return
                     }
+                    UserDefaults.standard.set(data.data?.name, forKey: "name")
+                    nextVC.modalPresentationStyle = .fullScreen
+                    self.present(nextVC, animated: true, completion: nil)
                 })
             case .pathErr: print("pathErr")
-            case .requestErr(_): print("requestErr")
+            case .requestErr(let data):
+                guard let data = data as? UserResponseModel else { return }
+                self.makeAlert(title: "회원가입",
+                               message: data.message,
+                               okAction: nil, completion: nil)
+                print("requestErr")
             case .serverErr: print("serverErr")
             case .networkFail: print("networkFail")
             }

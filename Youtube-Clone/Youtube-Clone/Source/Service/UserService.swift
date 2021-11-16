@@ -25,10 +25,12 @@ struct UserService {
                 case .success(let data):
                     print(res)
                     switch res.response?.statusCode {
-                    case 200, 400:
+                    case 200:
                         guard let jsonData = try? JSONDecoder().decode(UserResponseModel.self, from: data) else { return }
                         return completion(.success(jsonData))
-                        
+                    case 400:
+                        guard let jsonData = try? JSONDecoder().decode(UserResponseModel.self, from: data) else { return }
+                        return completion(.requestErr(jsonData))
                     default: completion(.networkFail)
                     }
                     
@@ -49,10 +51,12 @@ struct UserService {
                 case .success(let data):
                     print(res)
                     switch res.response?.statusCode {
-                    case 200, 400:
+                    case 200:
                         guard let jsonData = try? JSONDecoder().decode(UserResponseModel.self, from: data) else { return }
                         return completion(.success(jsonData))
-                        
+                    case 400:
+                        guard let jsonData = try? JSONDecoder().decode(UserResponseModel.self, from: data) else { return }
+                        return completion(.requestErr(jsonData))
                     default: completion(.networkFail)
                     }
                     
