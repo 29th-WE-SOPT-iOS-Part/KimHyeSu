@@ -67,7 +67,7 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="uTf-JF-CWZ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="uTf-JF-CWZ">
                                 <rect key="frame" x="0.0" y="192" width="414" height="621"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
@@ -161,9 +161,75 @@
             </objects>
             <point key="canvasLocation" x="250.72463768115944" y="105.80357142857143"/>
         </scene>
+        <!--Home Tab DetailVC-->
+        <scene sceneID="7Cx-49-CqU">
+            <objects>
+                <viewController storyboardIdentifier="HomeTabDetailVC" id="qIt-Rx-aLT" customClass="HomeTabDetailVC" customModule="Youtube_Clone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YM0-5a-gwM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ea7-3R-sB1">
+                                <rect key="frame" x="0.0" y="44" width="414" height="212"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="212" id="qcv-BR-Q1d"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0kL-a7-wXN">
+                                <rect key="frame" x="12" y="268" width="390" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Uy-Fl-AoE">
+                                <rect key="frame" x="12" y="290" width="390" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WMy-dk-dz9">
+                                <rect key="frame" x="12" y="56" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="muC-TR-QSe"/>
+                                    <constraint firstAttribute="width" constant="30" id="na4-5Q-p0P"/>
+                                </constraints>
+                                <color key="tintColor" red="0.97647058819999999" green="0.98039215690000003" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <buttonConfiguration key="configuration" style="plain" image="chevron.down" catalog="system"/>
+                                <connections>
+                                    <action selector="closeButtonClicked:" destination="qIt-Rx-aLT" eventType="touchUpInside" id="W13-iB-UXg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uAn-wv-ecE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WMy-dk-dz9" firstAttribute="top" secondItem="uAn-wv-ecE" secondAttribute="top" constant="12" id="4SL-aZ-Fgk"/>
+                            <constraint firstItem="ea7-3R-sB1" firstAttribute="leading" secondItem="uAn-wv-ecE" secondAttribute="leading" id="6yU-Or-uUa"/>
+                            <constraint firstItem="WMy-dk-dz9" firstAttribute="leading" secondItem="uAn-wv-ecE" secondAttribute="leading" constant="12" id="FQd-g9-Kfl"/>
+                            <constraint firstItem="0Uy-Fl-AoE" firstAttribute="trailing" secondItem="0kL-a7-wXN" secondAttribute="trailing" id="L8f-er-aOI"/>
+                            <constraint firstItem="ea7-3R-sB1" firstAttribute="top" secondItem="uAn-wv-ecE" secondAttribute="top" id="P2k-XZ-4SL"/>
+                            <constraint firstItem="0Uy-Fl-AoE" firstAttribute="top" secondItem="0kL-a7-wXN" secondAttribute="bottom" constant="4" id="gWK-Cu-Li7"/>
+                            <constraint firstItem="0Uy-Fl-AoE" firstAttribute="leading" secondItem="0kL-a7-wXN" secondAttribute="leading" id="jpF-3s-uWX"/>
+                            <constraint firstItem="0kL-a7-wXN" firstAttribute="leading" secondItem="uAn-wv-ecE" secondAttribute="leading" constant="12" id="okz-9e-fDD"/>
+                            <constraint firstItem="uAn-wv-ecE" firstAttribute="trailing" secondItem="0kL-a7-wXN" secondAttribute="trailing" constant="12" id="pN8-wg-2nf"/>
+                            <constraint firstItem="uAn-wv-ecE" firstAttribute="trailing" secondItem="ea7-3R-sB1" secondAttribute="trailing" id="r75-zb-4xQ"/>
+                            <constraint firstItem="0kL-a7-wXN" firstAttribute="top" secondItem="ea7-3R-sB1" secondAttribute="bottom" constant="12" id="xab-xn-WVE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="detailLabel" destination="0Uy-Fl-AoE" id="7ZR-SU-DNT"/>
+                        <outlet property="imageView" destination="ea7-3R-sB1" id="PYv-Hw-0bN"/>
+                        <outlet property="titleLabel" destination="0kL-a7-wXN" id="eDo-g9-OVJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ynE-AZ-v1S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="951" y="106"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Frame 72" width="32" height="32"/>
+        <image name="chevron.down" catalog="system" width="128" height="72"/>
         <image name="homeIcon" width="32.5" height="32.5"/>
         <image name="homeIconFill" width="32.5" height="32.5"/>
         <image name="notificationIcon" width="32" height="32"/>

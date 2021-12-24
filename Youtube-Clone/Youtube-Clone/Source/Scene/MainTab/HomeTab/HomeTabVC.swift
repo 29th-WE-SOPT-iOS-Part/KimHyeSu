@@ -7,8 +7,8 @@
 
 import UIKit
 
-class HomeTabVC: UIViewController {
-    
+class HomeTabVC: UIViewController, videoInfoDelegate {
+
     // MARK: - Property
     var videoList: [VideoData] = []
     var storyList: [Channel] = []
@@ -42,6 +42,21 @@ class HomeTabVC: UIViewController {
         storyCollectionView.dataSource = self
     }
     
+    func sendVideoInfo(video: VideoData) {
+        guard let detailVC = UIStoryboard(name: "HomeTab", bundle: nil).instantiateViewController(withIdentifier: "HomeTabDetailVC") as? HomeTabDetailVC else { return }
+        detailVC.videoData = video
+        detailVC.modalPresentationStyle = .fullScreen
+        self.present(detailVC, animated: true, completion: nil)
+    }
+    
+    // MARK: - Objc
+    @objc func tapImage(gestureRecognizer: UIGestureRecognizer) {
+        guard let detailVC = UIStoryboard(name: "HomeTab", bundle: nil).instantiateViewController(withIdentifier: "HomeTabDetailVC") as? HomeTabDetailVC else { return }
+        //detailVC.videoData = videoList
+        detailVC.modalPresentationStyle = .fullScreen
+        self.present(detailVC, animated: true, completion: nil)
+    }
+    
     // MARK: - IBAction
     @IBAction func loginButtonClicked(_ sender: Any) {
         guard let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginFristVC") as? LoginVC else { return }
@@ -68,13 +83,8 @@ extension HomeTabVC: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTVC.identifier, for: indexPath) as? HomeTVC else {
             return UITableViewCell()
         }
-        let data = videoList[indexPath.row]
-        cell.setData(videoImage: data.thumnail,
-                     channelImage: data.channel.image,
-                     title: data.title,
-                     channel: data.channel.name,
-                     watch: data.watch,
-                     upload: data.upload)
+        cell.setData(video: videoList[indexPath.row])
+        cell.delegate = self
         return cell
     }
 }
