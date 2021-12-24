@@ -7,9 +7,15 @@
 
 import UIKit
 
+protocol videoInfoDelegate {
+    func sendVideoInfo(video: VideoData)
+}
+
 class HomeTVC: UITableViewCell {
     
     public static let identifier = "HomeTVC"
+    var nowVideo: VideoData?
+    var delegate: videoInfoDelegate?
 
     @IBOutlet weak var videoImageView: UIImageView!
     @IBOutlet weak var channelImageView: UIImageView!
@@ -18,22 +24,29 @@ class HomeTVC: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        setGesture()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
-    func setData(videoImage: String,
-                 channelImage: String,
-                 title: String,
-                 channel: String,
-                 watch: Int,
-                 upload: String) {
-        videoImageView.image = UIImage(named: videoImage)
-        channelImageView.image = UIImage(named: channelImage)
-        titleLabel.text = title
-        descriptionLabel.text = "\(channel) • 조회수 \(watch)회 • \(upload)"
+    func setData(video: VideoData) {
+        nowVideo = video
+        videoImageView.image = UIImage(named: video.thumnail)
+        channelImageView.image = UIImage(named: video.channel.image)
+        titleLabel.text = video.title
+        descriptionLabel.text = "\(video.channel.name) • 조회수 \(video.watch)회 • \(video.upload)"
     }
     
+    func setGesture() {
+        let gesture = UITapGestureRecognizer(target: self,
+                                             action: #selector(tapImage))
+        videoImageView.addGestureRecognizer(gesture)
+        videoImageView.isUserInteractionEnabled = true
+    }
+    
+    @objc func tapImage() {
+        delegate?.sendVideoInfo(video: nowVideo!)
+    }
 }
