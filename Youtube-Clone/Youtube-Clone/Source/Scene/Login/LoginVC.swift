@@ -8,7 +8,7 @@
 import UIKit
 
 class LoginVC: UIViewController {
-
+    
     // MARK: - IBOutlet
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
@@ -38,7 +38,7 @@ class LoginVC: UIViewController {
     func setLabelUI() {
         descriptionLabel.text = "Youtube로 이동하여 계속하세요.\n앱 및 Safari에서도 Google 서비스에 로그인됩니다."
     }
-
+    
     func setButtonUI() {
         nextButton.layer.cornerRadius = 10
     }
@@ -66,7 +66,7 @@ class LoginVC: UIViewController {
         nextButton.isEnabled = isAllTextFieldHasText
         nextButton.backgroundColor = isAllTextFieldHasText ? .systemBlue : .lightGray
     }
-
+    
     // MARK: - IBAction
     @IBAction func joinButtonClicked(_ sender: Any) {
         guard let joinVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginSecondVC") as? JoinVC else { return }
@@ -74,9 +74,28 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func nextButtonClicked(_ sender: Any) {
-        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginThirdVC") as? WelcomeVC else { return }
-        nextVC.name = nameTextField.text
-        nextVC.modalPresentationStyle = .fullScreen
-        self.present(nextVC, animated: true, completion: nil)
+        UserService.shared.userLogin(email: emailTextField.text ?? "",
+                                     password: pwTextField.text ?? "") { res in
+            
+            switch res {
+            case .success(let data):
+                guard let data = data as? UserResponseModel else { return }
+                self.makeAlert(title: "로그인",
+                               message: data.message,
+                               okAction: { _ in
+                    guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginThirdVC") as? WelcomeVC else { return }
+                    UserDefaults.standard.set(data.data?.name, forKey: "name")
+                    nextVC.modalPresentationStyle = .fullScreen
+                    self.present(nextVC, animated: true, completion: nil)
+                })
+            case .pathErr: print("pathErr")
+            case .requestErr(let data):
+                guard let data = data as? UserResponseModel else { return }
+                self.makeAlert(title: "로그인", message: data.message, okAction: nil, completion: nil)
+                print("requestErr")
+            case .serverErr: print("serverErr")
+            case .networkFail: print("networkFail")
+            }
+        }
     }
 }

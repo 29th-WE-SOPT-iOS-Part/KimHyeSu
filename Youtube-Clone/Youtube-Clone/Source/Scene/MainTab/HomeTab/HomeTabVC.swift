@@ -41,6 +41,15 @@ class HomeTabVC: UIViewController {
         storyCollectionView.delegate = self
         storyCollectionView.dataSource = self
     }
+    
+    // MARK: - IBAction
+    @IBAction func loginButtonClicked(_ sender: Any) {
+        guard let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginFristVC") as? LoginVC else { return }
+        let loginNVC = UINavigationController(rootViewController: loginVC)
+        loginNVC.modalPresentationStyle = .fullScreen
+        self.present(loginNVC, animated: true, completion: nil)
+    }
+    
 }
 
 // MARK: - TableView Delegate

@@ -8,7 +8,7 @@
 import UIKit
 
 class JoinVC: UIViewController {
-
+    
     // MARK: - IBOutlet
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -32,7 +32,7 @@ class JoinVC: UIViewController {
     func setUI() {
         setButtonUI()
     }
-
+    
     func setButtonUI() {
         nextButton.layer.cornerRadius = 10
     }
@@ -59,12 +59,34 @@ class JoinVC: UIViewController {
     
     // MARK: - IBAction
     @IBAction func nextButtonClicked(_ sender: Any) {
-        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginThirdVC") as? WelcomeVC else {
-            return
+        UserService.shared.userJoin(email: emailTextField.text ?? "",
+                                    name: nameTextField.text ?? "",
+                                    password: pwTextField.text ?? "") { res in
+            switch res {
+            case .success(let data):
+                guard let data = data as? UserResponseModel else { return }
+                self.makeAlert(title: "회원가입",
+                               message: data.message,
+                               okAction: { _ in
+                    
+                    guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginThirdVC") as? WelcomeVC else {
+                        return
+                    }
+                    UserDefaults.standard.set(data.data?.name, forKey: "name")
+                    nextVC.modalPresentationStyle = .fullScreen
+                    self.present(nextVC, animated: true, completion: nil)
+                })
+            case .pathErr: print("pathErr")
+            case .requestErr(let data):
+                guard let data = data as? UserResponseModel else { return }
+                self.makeAlert(title: "회원가입",
+                               message: data.message,
+                               okAction: nil, completion: nil)
+                print("requestErr")
+            case .serverErr: print("serverErr")
+            case .networkFail: print("networkFail")
+            }
         }
-        nextVC.name = nameTextField.text
-        nextVC.modalPresentationStyle = .fullScreen
-        self.present(nextVC, animated: true, completion: nil)
     }
     
     @IBAction func pwButtonClicked(_ sender: Any) {

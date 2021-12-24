@@ -34,14 +34,14 @@ class WelcomeVC: UIViewController {
     
     // MARK: - Data setting
     func setData(){
+        name = UserDefaults.standard.value(forKey: "name") as? String
         nameTextLabel.text = "\(name!)님\n환영합니다!"
     }
     
     // MARK: - IBAction
     @IBAction func doneButtonClicked(_ sender: Any) {
         guard let mainTabVC = UIStoryboard(name: "MainTab", bundle: nil).instantiateViewController(withIdentifier: "MainTabVC") as? MainTabVC else { return }
-        mainTabVC.modalPresentationStyle = .fullScreen
-        self.present(mainTabVC, animated: true, completion: nil)
+        self.changeRootViewController(mainTabVC)
     }
     
     @IBAction func loginOtherButtonClicked(_ sender: Any) {
